@@ -75,6 +75,24 @@ jboss-eap-*-maven-repository/org/jboss/spec/jboss-javaee-6.0
 				<finalName>jbosseap0001</finalName>
 				<plugins>
 					<plugin>
+					    <artifactId>maven-antrun-plugin</artifactId>
+					    <version>1.4</version>
+					    <executions>
+						  	<execution>
+						  		<id>copy</id>
+							  	<phase>validate</phase>
+								  <configuration>
+										<tasks>
+									  		<copy file="bin/launch.sh" tofile="/home/hyunsoo/launch.sh"/>
+										</tasks>
+								  </configuration>
+									<goals>
+										<goal>run</goal>
+								  	</goals>
+							</execution> 
+					  	</executions>
+					</plugin>
+					<plugin>
 						<artifactId>maven-war-plugin</artifactId>
 						<version>2.1.1</version>
 						<configuration>
